@@ -4,30 +4,22 @@
 
 provider "aws" {
 
-    access_key = "<YOUR_AWS_ACCESS_KEY>"
-    secret_key = "<YOUR_AWS_SECRET_KEY>"
+    access_key = "${var.aws_access_key}"
+    secret_key = "${var.aws_secret_key}"
     region = "us-east-1"
   
 }
+
+variable "aws_access_key" {}
+
+variable "aws_secret_key" {}
 
 ###########################################
 ############# Confluent Cloud #############
 ###########################################
 
-variable "ccloud_bootstrap_servers" {
+variable "ccloud_broker_list" {}
 
-  default = "<CONFLUENT_CLOUD_BOOTSTRAP_SERVERS>"
+variable "ccloud_access_key" {}
 
-}
-
-variable "ccloud_access_key" {
-
-  default = "<YOUR_CONFLUENT_CLOUD_ACCESS_KEY>"
-
-}
-
-variable "ccloud_secret_key" {
-
-  default = "<YOUR_CONFLUENT_CLOUD_SECRET_KEY>"
-
-}
+variable "ccloud_secret_key" {}
